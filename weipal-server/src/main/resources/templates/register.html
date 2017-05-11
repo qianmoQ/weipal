@@ -5,44 +5,44 @@
 
 <body>
 <div class="full height">
-	<noscript>Please enable JavaScript in your browser!</noscript>
+    <noscript>Please enable JavaScript in your browser!</noscript>
 
-	<div th:include="common/menu::menu-all"></div>
+    <div th:include="common/menu::menu-all"></div>
 
-	<div class="user signup">
-		<div class="ui middle very relaxed page grid">
-			<div class="column">
-				<form class="ui form" action="/user/sign_up" method="post">
-					<h3 class="ui top attached header">
-						Sign Up
-					</h3>
-					<div class="ui attached segment">
-						<div class="required inline field ">
-							<label for="email">Email</label>
-							<input id="email" name="email" type="email" value="" required>
-						</div>
-						<div class="required inline field ">
-							<label for="password">Password</label>
-							<input id="password" name="password" type="password" value="" required>
-						</div>
-						<div class="required inline field ">
-							<label for="retype">Re-Type</label>
-							<input id="retype" name="retype" type="password" value="" required>
-						</div>
-						<div class="inline field">
-							<label></label>
-							<button class="ui green button">Create New Account</button>
-						</div>
-						<div class="inline field">
-							<label></label>
-							<a href="/login">Already have an account? Sign in now!</a>
-						</div>
+    <div class="user signup">
+        <div class="ui middle very relaxed page grid">
+            <div class="column">
+                <form class="ui form" action="/user/sign_up" method="post">
+                    <h3 class="ui top attached header">
+                        Sign Up
+                    </h3>
+                    <div class="ui attached segment">
+                        <div class="required inline field ">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" value="" required>
+                        </div>
+                        <div class="required inline field ">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" value="" required>
+                        </div>
+                        <div class="required inline field ">
+                            <label for="retype">Re-Type</label>
+                            <input id="retype" name="retype" type="password" value="" required>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <button class="ui green button">Create New Account</button>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <a href="/login">Already have an account? Sign in now!</a>
+                        </div>
 
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </div>
 

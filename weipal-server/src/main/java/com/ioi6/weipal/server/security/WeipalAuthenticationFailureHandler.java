@@ -29,7 +29,7 @@ public class WeipalAuthenticationFailureHandler extends SimpleUrlAuthenticationF
         if (!StringUtils.isEmpty(email)) {
             redirectUrl += SecurityConfig.LOGIN_ERROR_URL + email;
         }
-        log.info("{} login error redirecting to {}",email, redirectUrl);
+        log.info("{} login error redirecting to {}", email, redirectUrl);
         getRedirectStrategy().sendRedirect(request, response, redirectUrl);
     }
 

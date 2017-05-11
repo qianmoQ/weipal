@@ -5,48 +5,48 @@
 
 <body>
 <div class="full height">
-	<noscript>Please enable JavaScript in your browser!</noscript>
+    <noscript>Please enable JavaScript in your browser!</noscript>
 
-	<div th:include="common/menu::menu-all"></div>
+    <div th:include="common/menu::menu-all"></div>
 
-	<div class="user signin">
-		<div class="ui middle very relaxed page grid">
-			<div class="column">
-				<form class="ui form" th:action="@{/authorization/authenticate}" method="post">
-					<h3 class="ui top attached header">
-						Sign In
-					</h3>
-					<div class="ui attached segment">
-						<div class="required inline field ">
-							<label for="username">UserName</label>
-							<input id="username" name="username" th:value="${username}" autofocus required>
-						</div>
-						<div class="required inline field ">
-							<label for="password">Password</label>
-							<input id="password" name="password" type="password" value="" required>
-						</div>
-						<div class="inline field">
-							<label></label>
-							<div class="ui checkbox">
-								<label>Remember Me</label>
-								<input name="remember" type="checkbox">
-							</div>
-						</div>
+    <div class="user signin">
+        <div class="ui middle very relaxed page grid">
+            <div class="column">
+                <form class="ui form" th:action="@{/authorization/authenticate}" method="post">
+                    <h3 class="ui top attached header">
+                        Sign In
+                    </h3>
+                    <div class="ui attached segment">
+                        <div class="required inline field ">
+                            <label for="username">UserName</label>
+                            <input id="username" name="username" th:value="${username}" autofocus required>
+                        </div>
+                        <div class="required inline field ">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" value="" required>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <div class="ui checkbox">
+                                <label>Remember Me</label>
+                                <input name="remember" type="checkbox">
+                            </div>
+                        </div>
 
-						<div class="inline field">
-							<label></label>
-							<button class="ui green button" type="submit">Sign In</button>
-						</div>
-						<div class="inline field">
-							<label></label>
-							<a href="/register">Need an account? Sign up now.</a>
-						</div>
+                        <div class="inline field">
+                            <label></label>
+                            <button class="ui green button" type="submit">Sign In</button>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <a href="/register">Need an account? Sign up now.</a>
+                        </div>
 
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </div>
 

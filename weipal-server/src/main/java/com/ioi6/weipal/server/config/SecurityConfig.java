@@ -3,7 +3,6 @@ package com.ioi6.weipal.server.config;
 import com.ioi6.weipal.server.security.WeipalAuthenticationFailureHandler;
 import com.ioi6.weipal.server.security.WeipalAuthenticationSuccessHandler;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,13 +25,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final String LOGIN_PAGE_URL = "/login";
+    public static final String LOGIN_ERROR_URL = "/authorization/error";
+    public static final String TARGET_URL_PARAMETER = "from";
     private static final String LOGIN_PROCESSING_URL = "/authorization/authenticate";
     private static final String REGISTER_ACTIVATE_URL = "/register/activate";
     private static final String DOCUMENT_VIEW_URL = "/manual/documentview";
-    public static final String LOGIN_ERROR_URL = "/authorization/error";
-
-    public static final String TARGET_URL_PARAMETER = "from";
-
     // all user access url
     private static final String[] ACCESS_URL = {"/index", "/", "/register"};
     private static final String[] STATIC_RESOURCES_URL_PATTERN = {"/vendor/**", "/website/**"};

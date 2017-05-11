@@ -13,6 +13,7 @@ public class BaseView {
 
     /**
      * login view
+     *
      * @return
      */
     @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
