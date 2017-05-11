@@ -15,4 +15,11 @@
     <name>weipal common</name>
     <description>weipal common module</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

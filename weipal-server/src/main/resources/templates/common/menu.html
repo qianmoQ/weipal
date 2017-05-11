@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- all menu -->
+<div th:fragment="menu-all">
+	<div class="following bar light">
+		<div class="ui container">
+			<div class="ui grid">
+				<div class="column">
+					<div class="ui top secondary menu">
+						<a class="item brand" href="/">
+							<img class="ui mini image" src="/website/favicon.png">
+						</a>
+						<a class="item active" href="/">Index</a>
+						<a class="item" href="/query">Query</a>
+						<a class="item" target="_blank" href="/help" rel="noreferrer">Help</a>
+						<div class="right menu">
+							<a class="item" href="/register">
+								<i class="octicon octicon-person"></i> Register
+								<a class="item" href="/login">
+									<i class="octicon octicon-sign-in"></i> Sign In
+								</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</html>
