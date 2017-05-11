@@ -1,160 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.4.RELEASE</version>
+  </parent>
+
+  <groupId>com.ioi6.weipal</groupId>
+  <artifactId>weipal</artifactId>
+  <packaging>pom</packaging>
+  <name>weipal</name>
+  <description>Presto Web UI</description>
+  <version>1.0.0</version>
+
+  <modules>
+    <module>weipal-database</module>
+    <module>weipal-server</module>
+    <module>weipal-common</module>
+    <module>weipal-model</module>
+  </modules>
+
+  <organization>
+    <name>IOI6</name>
+    <url>http://www.ioi6.com</url>
+  </organization>
+
+  <properties>
+    <!-- spring boot properties -->
+    <spring.boot.version>1.4.4.RELEASE</spring.boot.version>
+    <!-- spring context properties -->
+    <spring.context.version>4.3.4.RELEASE</spring.context.version>
+    <!-- lombok properties -->
+    <lombok.version>1.16.10</lombok.version>
+    <!-- mybatis properties -->
+    <mybatis.version>3.3.1</mybatis.version>
+    <mybatis.spring.version>1.2.2</mybatis.spring.version>
+    <!-- mysql properties -->
+    <mysql.connector.version>5.1.38</mysql.connector.version>
+    <!-- commons lang properties -->
+    <commons.lang.version>3.4</commons.lang.version>
+    <!-- thymeleaf properties -->
+    <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+    <!-- druid properties -->
+    <druid.version>1.0.18</druid.version>
+    <!-- plugin properties -->
+    <plugin.java.version>1.8</plugin.java.version>
+    <plugin.maven.compiler.version>2.0.2</plugin.maven.compiler.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- weipal dependency -->
+      <dependency>
+        <groupId>com.ioi6.weipal</groupId>
+        <artifactId>weipal-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ioi6.weipal</groupId>
+        <artifactId>weipal-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ioi6.weipal</groupId>
+        <artifactId>weipal-database</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- spring boot dependency -->
+      <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.4.RELEASE</version>
-    </parent>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <!-- thymeleaf dependency -->
+      <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf</artifactId>
+        <version>${thymeleaf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf-spring4</artifactId>
+        <version>${thymeleaf.version}</version>
+      </dependency>
+      <!-- spring dependency -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.context.version}</version>
+      </dependency>
+      <!-- lombox dependency -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <!-- mybatis dependency -->
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis.spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+      <!-- mysql dependency -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.connector.version}</version>
+      </dependency>
+      <!-- commons lang dependency -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons.lang.version}</version>
+      </dependency>
+      <!-- database dependency -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-    <groupId>com.ioi6.weipal</groupId>
-    <artifactId>weipal</artifactId>
-    <packaging>pom</packaging>
-    <name>weipal</name>
-    <description>Presto Web UI</description>
-    <version>1.0.0</version>
-
-    <modules>
-        <module>weipal-database</module>
-        <module>weipal-server</module>
-        <module>weipal-common</module>
-        <module>weipal-model</module>
-    </modules>
-
-    <organization>
-        <name>IOI6</name>
-        <url>http://www.ioi6.com</url>
-    </organization>
-
-    <properties>
-        <!-- spring boot properties -->
-        <spring.boot.version>1.4.4.RELEASE</spring.boot.version>
-        <!-- spring context properties -->
-        <spring.context.version>4.3.4.RELEASE</spring.context.version>
-        <!-- lombok properties -->
-        <lombok.version>1.16.10</lombok.version>
-        <!-- mybatis properties -->
-        <mybatis.version>3.3.1</mybatis.version>
-        <mybatis.spring.version>1.2.2</mybatis.spring.version>
-        <!-- mysql properties -->
-        <mysql.connector.version>5.1.38</mysql.connector.version>
-        <!-- commons lang properties -->
-        <commons.lang.version>3.4</commons.lang.version>
-        <!-- thymeleaf properties -->
-        <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
-        <!-- druid properties -->
-        <druid.version>1.0.18</druid.version>
-        <!-- plugin properties -->
-        <plugin.java.version>1.8</plugin.java.version>
-        <plugin.maven.compiler.version>2.0.2</plugin.maven.compiler.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- weipal dependency -->
-            <dependency>
-                <groupId>com.ioi6.weipal</groupId>
-                <artifactId>weipal-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ioi6.weipal</groupId>
-                <artifactId>weipal-model</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ioi6.weipal</groupId>
-                <artifactId>weipal-database</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <!-- spring boot dependency -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${spring.boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring.boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-security</artifactId>
-                <version>${spring.boot.version}</version>
-            </dependency>
-            <!-- thymeleaf dependency -->
-            <dependency>
-                <groupId>org.thymeleaf</groupId>
-                <artifactId>thymeleaf</artifactId>
-                <version>${thymeleaf.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.thymeleaf</groupId>
-                <artifactId>thymeleaf-spring4</artifactId>
-                <version>${thymeleaf.version}</version>
-            </dependency>
-            <!-- spring dependency -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.context.version}</version>
-            </dependency>
-            <!-- lombox dependency -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <!-- mybatis dependency -->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis.spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-            <!-- mysql dependency -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.connector.version}</version>
-            </dependency>
-            <!-- commons lang dependency -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${commons.lang.version}</version>
-            </dependency>
-            <!-- database dependency -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <!-- project compile java version -->
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${plugin.maven.compiler.version}</version>
-                <configuration>
-                    <source>${plugin.java.version}</source>
-                    <target>${plugin.java.version}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <!-- project compile java version -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${plugin.maven.compiler.version}</version>
+        <configuration>
+          <source>${plugin.java.version}</source>
+          <target>${plugin.java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
