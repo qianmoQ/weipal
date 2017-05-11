@@ -12,14 +12,14 @@
 	<div class="user signin">
 		<div class="ui middle very relaxed page grid">
 			<div class="column">
-				<form class="ui form" action="/user/login" method="post">
+				<form class="ui form" th:action="@{/authorization/authenticate}" method="post">
 					<h3 class="ui top attached header">
 						Sign In
 					</h3>
 					<div class="ui attached segment">
 						<div class="required inline field ">
-							<label for="email">Email</label>
-							<input id="email" name="email" value="" autofocus required>
+							<label for="username">UserName</label>
+							<input id="username" name="username" th:value="${username}" autofocus required>
 						</div>
 						<div class="required inline field ">
 							<label for="password">Password</label>
@@ -35,7 +35,7 @@
 
 						<div class="inline field">
 							<label></label>
-							<button class="ui green button">Sign In</button>
+							<button class="ui green button" type="submit">Sign In</button>
 						</div>
 						<div class="inline field">
 							<label></label>

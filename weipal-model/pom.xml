@@ -11,22 +11,14 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weipal-database</artifactId>
-    <name>weipal database</name>
-    <description>weipal application database module</description>
+    <artifactId>weipal-model</artifactId>
+    <name>weipal model</name>
+    <description>weipal application model module</description>
 
     <dependencies>
         <dependency>
-            <groupId>com.ioi6.weipal</groupId>
-            <artifactId>weipal-model</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

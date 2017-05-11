@@ -22,6 +22,7 @@
         <module>weipal-database</module>
         <module>weipal-server</module>
         <module>weipal-common</module>
+        <module>weipal-model</module>
     </modules>
 
     <organization>
@@ -45,6 +46,8 @@
         <commons.lang.version>3.4</commons.lang.version>
         <!-- thymeleaf properties -->
         <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+        <!-- druid properties -->
+        <druid.version>1.0.18</druid.version>
         <!-- plugin properties -->
         <plugin.java.version>1.8</plugin.java.version>
         <plugin.maven.compiler.version>2.0.2</plugin.maven.compiler.version>
@@ -56,6 +59,16 @@
             <dependency>
                 <groupId>com.ioi6.weipal</groupId>
                 <artifactId>weipal-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ioi6.weipal</groupId>
+                <artifactId>weipal-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ioi6.weipal</groupId>
+                <artifactId>weipal-database</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- spring boot dependency -->
@@ -119,6 +132,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons.lang.version}</version>
+            </dependency>
+            <!-- database dependency -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
