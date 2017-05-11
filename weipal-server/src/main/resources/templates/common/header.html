@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- all header -->
 <head th:fragment="header-all(title, description)">
+    <meta charset="utf-8"/>
+    <title th:text="${title}"> - Weipal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta th:content="${description}" name="description"/>
+    <meta content="shicheng" name="author"/>
+
+    <link th:href="@{/vendor/css/codemirror/codemirror.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/vendor/css/codemirror/codemirror-eclipse.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/vendor/css/codemirror/codemirror-show-hint.css}" rel="stylesheet" type="text/css"/>
+
+    <link th:href="@{/vendor/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/vendor/css/octicons.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/vendor/css/semantic-2.2.10.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/vendor/css/jquery.contextmenu.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/website/css/weipal.css}" rel="stylesheet" type="text/css"/>
+
+    <script th:src="@{/vendor/js/jquery-1.11.3.min.js}"></script>
+    <script th:src="@{/vendor/js/jquery.are-you-sure.js}"></script>
+    <!-- codemirror -->
+    <script th:src="@{/vendor/js/codemirror/codemirror.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-show-hint.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-sql-hint.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-sql.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-mark-selection.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-selection-pointer.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-active-line.js}"></script>
+    <script th:src="@{/vendor/js/codemirror/codemirror-placeholder.js}"></script>
+
+    <script th:src="@{/vendor/js/semantic-2.2.10.min.js}"></script>
+    <script th:src="@{/vendor/js/emojify-1.1.0.min.js}"></script>
+    <script th:src="@{/vendor/js/clipboard-1.5.9.min.js}"></script>
+    <script th:src="@{/vendor/js/jquery.contextmenu.js}"></script>
+
+    <!-- weipal -->
+    <script th:src="@{/website/js/weipal-codeeditor.js}"></script>
+    <script th:src="@{/website/js/weipal.js}"></script>
 
 </head>
-
-<!-- login Header -->
+<!-- login header -->
 <head th:fragment="header-login">
     <meta charset="utf-8"/>
     <title>Weipal Login</title>
@@ -13,13 +50,15 @@
     <meta content="weipal" name="description"/>
     <meta content="shicheng" name="author"/>
 
-    <script th:src="@{/vendor/jquery/jquery-1.11.3.min.js}"></script>
-    <script th:src="@{/vendor/jquery/jquery.are-you-sure.js}"></script>
+    <script th:src="@{/vendor/js/jquery-1.11.3.min.js}"></script>
+    <script th:src="@{/vendor/js/jquery.are-you-sure.js}"></script>
 
     <link th:href="@{/vendor/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/vendor/css/octicons.min.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/vendor/css/semantic-2.2.10.min.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/vendor/css/weipal.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/website/css/weipal.css}" rel="stylesheet" type="text/css"/>
+
+    <script th:src="@{/vendor/js/semantic-2.2.10.min.js}"></script>
 </head>
 
 </html>

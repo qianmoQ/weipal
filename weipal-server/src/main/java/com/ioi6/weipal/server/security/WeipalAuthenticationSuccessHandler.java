@@ -20,14 +20,15 @@ public class WeipalAuthenticationSuccessHandler extends SavedRequestAwareAuthent
         implements AuthenticationSuccessHandler {
 
     public WeipalAuthenticationSuccessHandler() {
-        super.setTargetUrlParameter(SecurityConfig.TARGET_URL_PARAMETER);
+        // redirect to home
+        super.setDefaultTargetUrl(SecurityConfig.LOGIN_SUCCESS_HOME);
+//        super.setTargetUrlParameter(SecurityConfig.TARGET_URL_PARAMETER);
     }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response, Authentication authentication)
             throws ServletException, IOException {
-        //添加登陆日志
         super.onAuthenticationSuccess(request, response, authentication);
     }
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:include="common/header::header-all('Query', 'Data Query')"></head>
+
+<body>
+<div class="full height">
+    <noscript>Please enable JavaScript in your browser!</noscript>
+
+    <div th:include="/common/menu::menu-home"></div>
+
+    <div class="repository file list">
+        <div class="ui container">
+            <!-- sql editor -->
+            <div id="file-content" class="tab-size-8">
+                <h4 class="ui top attached header" id="repo-readme">
+                    <i class="octicon octicon-code"></i>
+                    <strong>SQL Editor</strong>
+                </h4>
+                <div class="field">
+                    <div class="ui bottom attached active tab segment" data-tab="write">
+                        <textarea id="edit_area" name="content"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="common/footer::copyright-footer">
+
+</body>
+</html>

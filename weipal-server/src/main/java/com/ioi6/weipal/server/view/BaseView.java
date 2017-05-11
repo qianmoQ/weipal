@@ -12,23 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BaseView {
 
     /**
-     * login view
+     * index view
      *
-     * @return
+     * @return index page
      */
     @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
     String index() {
         return "index";
-    }
-
-    @RequestMapping(value = {"login", "signIn"}, method = RequestMethod.GET)
-    String login() {
-        return "login";
-    }
-
-    @RequestMapping(value = {"register", "signUp"}, method = RequestMethod.GET)
-    String register() {
-        return "register";
     }
 
 }

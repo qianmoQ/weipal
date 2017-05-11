@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<!-- all menu -->
+<!-- no login menu -->
 <div th:fragment="menu-all">
     <div class="following bar light">
         <div class="ui container">
@@ -11,12 +11,11 @@
                             <img class="ui mini image" src="/website/favicon.png">
                         </a>
                         <a class="item active" href="/">Index</a>
-                        <a class="item" href="/query">Query</a>
                         <a class="item" target="_blank" href="/help" rel="noreferrer">Help</a>
                         <div class="right menu">
-                            <a class="item" href="/register">
+                            <a class="item" href="/user/register">
                                 <i class="octicon octicon-person"></i> Register
-                                <a class="item" href="/login">
+                                <a class="item" href="/user/login">
                                     <i class="octicon octicon-sign-in"></i> Sign In
                                 </a>
                         </div>
@@ -26,5 +25,78 @@
         </div>
     </div>
 </div>
+<!-- login menu -->
+<div th:fragment="menu-home">
+    <div class="following bar light">
+        <div class="ui container">
+            <div class="ui grid">
+                <div class="column">
+                    <div class="ui top secondary menu">
+                        <a class="item brand" href="/home/dashboard">
+                            <img class="ui mini image" src="/website/favicon.png">
+                        </a>
+                        <a class="item" href="/home/dashboard">Dashboard</a>
+                        <a class="item" href="/home/query">Query</a>
+                        <div class="right menu">
+                            <div class="ui dropdown head link jump item poping up" data-content="Create..." data-variation="tiny inverted" tabindex="0">
+                                <span class="text">
+                                    <i class="octicon octicon-plus"><span class="sr-only">Create...</span></i>
+                                    <i class="octicon octicon-triangle-down"></i>
+                                </span>
+                                <div class="menu" tabindex="-1">
+                                    <a class="item" href="/repo/create">
+                                        <i class="octicon octicon-plus"></i> New Repository
+                                    </a>
+                                    <a class="item" href="/repo/migrate">
+                                        <i class="octicon octicon-repo-clone"></i> New Migration
+                                    </a>
 
+                                    <a class="item" href="/org/create">
+                                        <i class="octicon octicon-organization"></i> New Organization
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="ui dropdown head link jump item poping up" data-content="User profile and more" data-variation="tiny inverted" tabindex="0">
+                                <span class="text avatar">
+                                    <img class="ui small rounded image" src="/avatars/1">
+                                    <span class="sr-only">User profile and more</span>
+                                    <i class="octicon octicon-triangle-down" tabindex="-1"></i>
+                                </span>
+                                <div class="menu" tabindex="-1">
+                                    <div class="ui header">
+                                        Signed in as <strong>shicheng</strong>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <a class="item" href="/shicheng">
+                                        <i class="octicon octicon-person"></i>
+                                        Your Profile
+                                    </a>
+                                    <a class=" item" href="/user/settings">
+                                        <i class="octicon octicon-settings"></i>
+                                        Your Settings
+                                    </a>
+                                    <a class="item" target="_blank" href="https://gogs.io/docs" rel="noreferrer">
+                                        <i class="octicon octicon-question"></i>
+                                        Help
+                                    </a>
+                                    <div class="divider"></div>
+                                    <a class=" item" href="/admin">
+                                        <i class="icon settings"></i>
+                                        Admin Panel
+                                    </a>
+                                    <div class="divider"></div>
+                                    <a class="item" href="/user/logout">
+                                        <i class="octicon octicon-sign-out"></i>
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

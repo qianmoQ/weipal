@@ -28,7 +28,7 @@ public class WeipalUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("validate [{}] login status", username);
-        // TODO: add user split user and amdin
+        // TODO: add user split user and admin
         User user = userService.getByUserName(username);
         if (user == null) {
             log.info("user [{}] not found.", username);

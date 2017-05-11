@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:include="common/header::header-all('Dashboard', 'Dashboard')"></head>
+
+<body>
+<div class="full height">
+    <noscript>Please enable JavaScript in your browser!</noscript>
+
+    <div th:include="/common/menu::menu-home"></div>
+
+</div>
+
+<div th:replace="common/footer::copyright-footer">
+
+</body>
+</html>
