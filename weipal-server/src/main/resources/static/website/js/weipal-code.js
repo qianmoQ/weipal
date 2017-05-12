@@ -15,7 +15,7 @@ var WeipalCode = {
 
   dataIsNotEmpty: 'data is not empty',
 
-  sql_not_null: 'select sql is not empty',
+  sqlNotNull: 'select sql is not empty',
 
   warning: 'warning',
   prompt: 'prompt',

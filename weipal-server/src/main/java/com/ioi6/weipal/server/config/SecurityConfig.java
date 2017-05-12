@@ -25,7 +25,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final String LOGIN_PAGE_URL = "/user/login";
-    public static final String LOGIN_ERROR_URL = "/authorization/error";
+    public static final String LOGOUT_PAGE_URL = "/user/logout";
+    public static final String LOGIN_ERROR_URL = "/user/login/error";
     public static final String TARGET_URL_PARAMETER = "from";
     public static final String LOGIN_SUCCESS_HOME = "/home/dashboard";
     private static final String LOGIN_PROCESSING_URL = "/authorization/authenticate";
@@ -71,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 successHandler(authenticationSuccessHandler).
                 failureHandler(authenticationFailureHandler)
                 .and()
-                .logout()
+                .logout().logoutUrl(LOGOUT_PAGE_URL)
                 .logoutSuccessUrl(ACCESS_URL[0]).permitAll()
                 .invalidateHttpSession(true);
     }

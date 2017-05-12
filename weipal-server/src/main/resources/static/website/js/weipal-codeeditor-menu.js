@@ -18,7 +18,7 @@ var WeipalCodeEditorMenu = function () {
           icon: 'octicon octicon-rocket',
           action: function () {
             if (WeipalCodeEditor.getValue() == '') {
-              WeipalCommon.showMessage(WeipalCode.warning, WeipalCode.sql_not_null, 'octicon octicon-alert');
+              WeipalCommon.showMessage(WeipalCode.warning, WeipalCode.sqlNotNull, 'octicon octicon-alert');
               return;
             }
           }
@@ -28,9 +28,17 @@ var WeipalCodeEditorMenu = function () {
           icon: 'octicon octicon-file-code',
           action: function () {
             if (WeipalCodeEditor.getValue() == '') {
-              WeipalCommon.showMessage(WeipalCode.warning, WeipalCode.sql_not_null, 'octicon octicon-alert');
+              WeipalCommon.showMessage(WeipalCode.warning, WeipalCode.sqlNotNull, 'octicon octicon-alert');
               return;
             }
+            $.post(WeipalApi.formatSQL, {sql: WeipalCodeEditor.getValue()}, function (result) {
+              if (result.code === WeipalCode.success) {
+                WeipalCodeEditor.setValue(result.data);
+                WeipalCommon.closeMessage();
+              } else {
+                WeipalCommon.showMessage(WeipalCode.warning, result.data, 'octicon octicon-alert');
+              }
+            });
           }
         },
         {

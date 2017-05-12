@@ -48,6 +48,8 @@
     <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
     <!-- druid properties -->
     <druid.version>1.0.18</druid.version>
+    <!-- presto version -->
+    <presto.version>0.175</presto.version>
     <!-- plugin properties -->
     <plugin.java.version>1.8</plugin.java.version>
     <plugin.maven.compiler.version>2.0.2</plugin.maven.compiler.version>
@@ -138,6 +140,17 @@
         <groupId>com.alibaba</groupId>
         <artifactId>druid</artifactId>
         <version>${druid.version}</version>
+      </dependency>
+      <!-- presto dependency -->
+      <dependency>
+        <groupId>com.facebook.presto</groupId>
+        <artifactId>presto-parser</artifactId>
+        <version>${presto.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.facebook.presto</groupId>
+        <artifactId>presto-client</artifactId>
+        <version>${presto.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

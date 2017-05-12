@@ -21,6 +21,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private String imageUrl;
     private boolean enable;
     private boolean locked;
     private boolean deleted;

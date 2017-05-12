@@ -25,11 +25,11 @@ public class WeipalAuthenticationFailureHandler extends SimpleUrlAuthenticationF
             throws IOException, ServletException {
         saveException(request, exception);
         String redirectUrl = SecurityConfig.LOGIN_PAGE_URL;
-        String email = request.getParameter("email");
-        if (!StringUtils.isEmpty(email)) {
-            redirectUrl += SecurityConfig.LOGIN_ERROR_URL + email;
+        String username = request.getParameter("username");
+        if (!StringUtils.isEmpty(username)) {
+            redirectUrl = SecurityConfig.LOGIN_ERROR_URL + "?u=" + username;
         }
-        log.info("{} login error redirecting to {}", email, redirectUrl);
+        log.info("{} login error redirecting to {}", username, redirectUrl);
         getRedirectStrategy().sendRedirect(request, response, redirectUrl);
     }
 

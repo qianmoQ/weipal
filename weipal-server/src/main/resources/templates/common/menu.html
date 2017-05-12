@@ -59,13 +59,13 @@
                             </div>
                             <div class="ui dropdown head link jump item poping up" data-content="User profile and more" data-variation="tiny inverted" tabindex="0">
                                 <span class="text avatar">
-                                    <img class="ui small rounded image" src="/website/img/default_user_img.png">
+                                    <img class="ui small rounded image" th:src="${session.SPRING_SECURITY_CONTEXT.authentication.principal.imageUrl}">
                                     <span class="sr-only">User profile and more</span>
                                     <i class="octicon octicon-triangle-down" tabindex="-1"></i>
                                 </span>
                                 <div class="menu" tabindex="-1">
                                     <div class="ui header">
-                                        Signed in as <strong>shicheng</strong>
+                                        Signed in as <strong th:text="${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}"></strong>
                                     </div>
                                     <div class="divider"></div>
                                     <a class="item" href="/shicheng">

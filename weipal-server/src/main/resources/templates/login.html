@@ -17,6 +17,9 @@
                         Sign In
                     </h3>
                     <div class="ui attached segment">
+                        <div class="ui negative message" th:if="${usernamePasswordWrong}">
+                            <p>Username or password is not correct.</p>
+                        </div>
                         <div class="required inline field ">
                             <label for="username">UserName</label>
                             <input id="username" name="username" th:value="${username}" autofocus required>

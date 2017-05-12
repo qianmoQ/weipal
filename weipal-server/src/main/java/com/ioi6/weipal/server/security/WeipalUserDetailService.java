@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -38,9 +39,9 @@ public class WeipalUserDetailService implements UserDetailsService {
     }
 
     private UserDetails convertToUserDetail(User user) {
-        List<GrantedAuthority> authorityList = getUserAuthorities(user);
-        WeipalUserDetail userDetails = new WeipalUserDetail(user.getEmail(), user.getPassword(), authorityList);
-        userDetails.setUser(user);
+        Collection<GrantedAuthority> authorities = getUserAuthorities(user);
+        WeipalUserDetail userDetails = new WeipalUserDetail(user);
+        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         return userDetails;
     }
 

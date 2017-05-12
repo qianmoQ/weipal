@@ -16,7 +16,7 @@ public interface UserMapper {
      *
      * @return user list
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user")
+    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime, imageUrl FROM user")
     List<User> getAllUser();
 
     /**
@@ -25,7 +25,7 @@ public interface UserMapper {
      * @param id user id
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
+    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime, imageUrl FROM user " +
             "WHERE id = #{id}")
     User getById(String id);
 
@@ -35,7 +35,7 @@ public interface UserMapper {
      * @param email user email
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
+    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime, imageUrl FROM user " +
             "WHERE email = #{email}")
     User getByEmail(String email);
 
@@ -45,7 +45,7 @@ public interface UserMapper {
      * @param username user username
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
+    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime, imageUrl FROM user " +
             "WHERE username = #{username}")
     User getByUserName(String username);
 
@@ -56,7 +56,7 @@ public interface UserMapper {
      * @param password user password
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
+    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime, imageUrl FROM user " +
             "WHERE email = #{email} and password = #{password}")
     User getByEmailAndPassword(String email, String password);
 

@@ -4,6 +4,10 @@
  */
 var WeipalCommon = function () {
 
+  var getApi = function () {
+    return 'http://172.16.39.133:8080';
+  }
+
   /**
    * event element
    * @type {{}}
@@ -36,6 +40,7 @@ var WeipalCommon = function () {
   }
 
   return {
+    getApi: getApi,
     eventElement: eventElement,
     showMessage: showMessage,
     closeMessage: closeMessage

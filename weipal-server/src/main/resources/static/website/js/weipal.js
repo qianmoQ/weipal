@@ -40,4 +40,8 @@ $(document).ready(function () {
   WeipalCodeEditor.initCodeEditor(WeipalCommon.eventElement.codeEditor, null);
   WeipalEvent.initEvent();
   WeipalCodeEditorMenu.initCodeEditorMenu(WeipalCommon.eventElement.codeEditorMenu);
+
+  /* init datasource */
+
+
 });

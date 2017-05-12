@@ -67,6 +67,14 @@
       <artifactId>druid</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.facebook.presto</groupId>
+      <artifactId>presto-parser</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.facebook.presto</groupId>
+      <artifactId>presto-client</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.ioi6.weipal</groupId>
       <artifactId>weipal-common</artifactId>
     </dependency>
