@@ -37,36 +37,7 @@ $(document).ready(function () {
     $($(this).data('target')).slideToggle(100);
   });
 
-  WeipalCodeEditor.initCodeEditor('edit_area', null);
-
-
-  $(function () {
-    $('.CodeMirror').contextPopup({
-      title: 'Editor Quick Link',
-      items: [
-        {
-          label: 'Execute', icon: 'octicon octicon-rocket', action: function () {
-        }
-        },
-        {
-          label: 'Format', icon: 'octicon octicon-file-code', action: function () {
-        }
-        },
-        {
-          label: 'Undo', icon: 'octicon octicon-cloud-upload', action: function () {
-        }
-        },,
-        {
-          label: 'Redo', icon: 'octicon octicon-cloud-download', action: function () {
-        }
-        },
-        null,
-        {
-          label: 'Clear', icon: 'octicon octicon-trashcan', action: function () {
-        }
-        }
-      ]
-    });
-  });
-
+  WeipalCodeEditor.initCodeEditor(WeipalCommon.eventElement.codeEditor, null);
+  WeipalEvent.initEvent();
+  WeipalCodeEditorMenu.initCodeEditorMenu(WeipalCommon.eventElement.codeEditorMenu);
 });

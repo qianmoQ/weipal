@@ -24,12 +24,6 @@ var WeipalCodeEditor = function () {
       codeEditor.on('change', function () {
         codeEditor.showHint();
       });
-      codeEditor.on('contextmenu', function () {
-        alert('contextmenu');
-      });
-      codeEditor.on('onCursorActivity', function() {
-        alert()
-      });
       CODE_EDITOR = codeEditor;
       return codeEditor;
     }
@@ -92,7 +86,6 @@ var WeipalCodeEditor = function () {
    * @param line
    */
   var highlightLine = function (line) {
-    alert(line)
     CODE_EDITOR.addLineClass(line, 'background', 'CodeMirror-error-line-background');
   }
 
