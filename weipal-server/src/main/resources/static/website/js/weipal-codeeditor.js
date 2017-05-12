@@ -60,7 +60,7 @@ var WeipalCodeEditor = function () {
    * @returns {*}
    */
   var getValue = function () {
-    var value = CODE_EDITOR.getValue();
+    var value = CODE_EDITOR.getValue().trim();
     return value;
   }
 
