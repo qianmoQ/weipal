@@ -64,6 +64,7 @@
                                     <i class="octicon octicon-triangle-down" tabindex="-1"></i>
                                 </span>
                                 <div class="menu" tabindex="-1">
+                                    <input id="userId" th:value="${session.SPRING_SECURITY_CONTEXT.authentication.principal.id}"/>
                                     <div class="ui header">
                                         Signed in as <strong th:text="${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}"></strong>
                                     </div>

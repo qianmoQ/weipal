@@ -5,7 +5,11 @@
 var WeipalCommon = function () {
 
   var getApi = function () {
-    return 'http://172.16.39.133:8080';
+    return 'http://192.168.99.215:8080';
+  }
+
+  var getUid = function () {
+    return $('#userId').val();
   }
 
   /**
@@ -20,6 +24,8 @@ var WeipalCommon = function () {
     codeEditorUndo: '.editor-undo',
     codeEditorRedo: '.editor-redo',
     codeEditorClear: '.editor-clear',
+
+    dataSource: '#datasource'
   }
 
   var showMessage = function (title, message, icon) {
@@ -41,6 +47,7 @@ var WeipalCommon = function () {
 
   return {
     getApi: getApi,
+    getUid: getUid,
     eventElement: eventElement,
     showMessage: showMessage,
     closeMessage: closeMessage

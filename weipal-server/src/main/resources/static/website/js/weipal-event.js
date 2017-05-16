@@ -56,8 +56,22 @@ var WeipalEvent = function () {
     editorClear();
   }
 
+  var initDataSource = function (id) {
+    $.get(WeipalApi.getSourceById + '?uid=' + WeipalCommon.getUid(), function (result) {
+      if (result.code === WeipalCode.success) {
+        $(result.data).each(function (i, val) {
+          var option = '<option value="' + val.id + '">' + val.sourceName+ '</option>';
+          $(WeipalCommon.eventElement.dataSource).append(option);
+        });
+      } else {
+        WeipalCommon.showMessage(WeipalCode.warning, result.data, 'octicon octicon-alert');
+      }
+    });
+  }
+
   return {
-    initEvent: initEvent
+    initEvent: initEvent,
+    initDataSource: initDataSource
   }
 
 }()

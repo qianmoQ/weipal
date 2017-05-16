@@ -11,7 +11,7 @@
 
     <div class="repository file list">
         <div class="ui container">
-            <!-- data source -->
+            <!-- datasource -->
             <div class="ui secondary menu">
                 <div class="fitted item">
                     <button class="ui green small button" >
@@ -19,13 +19,41 @@
                     </button>
                 </div>
                 <div class="fitted item choose reference poping up" data-content="Select Datasource" data-variation="tiny inverted">
-                    <select id="datasource" name="datasource" class="ui fluid search dropdown"></select>
+                    <select id="datasource" name="datasource" class="ui fluid search dropdown">
+                        <option value="">Select DataSource</option>
+                    </select>
                 </div>
             </div>
             <!-- datasource description -->
-
+            <div class="ui grid tab-size-8">
+                <div class="four wide column">
+                    <div class="ui vertical menu datasource-catalog">
+                        <div class="header item">Catalog</div>
+                        <a class="item" value="">Please DataSource</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui vertical menu">
+                        <div class="header item">Database</div>
+                        <a class="item" value="">Please Catalog</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui vertical menu">
+                        <div class="header item">Table</div>
+                        <a class="item" value="">Please Database</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <div class="ui vertical menu">
+                        <div class="header item">Column</div>
+                        <a class="item" value="">Please Table</a>
+                    </div>
+                </div>
+            </div>
+            <br/>
             <!-- sql editor -->
-            <div id="file-content" class="tab-size-8">
+            <div id="file-content" class="ui tab-size-8">
                 <h4 class="ui top attached header" id="repo-readme">
                     <i class="octicon octicon-code"></i>
                     <strong>SQL Editor</strong>
@@ -34,9 +62,9 @@
                             <a class="ui inverted blue button editor-execute">Run</a>
                         </div>
                         <i class="octicon octicon-file-code btn-octicon poping up editor-format" data-content="Format Editor SQL" data-position="bottom center" data-variation="tiny inverted"></i>
-                        <i class="octicon octicon-cloud-upload btn-octicon poping up editor-undo" data-content="Undo Editor SQL" data-position="bottom center" data-variation="tiny inverted"></i>
-                        <i class="octicon octicon-cloud-download btn-octicon poping up editor-redo" data-content="Redo Editor SQL" data-position="bottom center" data-variation="tiny inverted"></i>
-                        <i class="octicon octicon-trashcan btn-octicon poping up editor-clear" data-content="Clear Editor SQL" data-position="bottom center" data-variation="tiny inverted"></i>
+                        <i class="octicon octicon-cloud-upload btn-octicon poping up editor-undo" data-content="Undo Editor" data-position="bottom center" data-variation="tiny inverted"></i>
+                        <i class="octicon octicon-cloud-download btn-octicon poping up editor-redo" data-content="Redo Editor" data-position="bottom center" data-variation="tiny inverted"></i>
+                        <i class="octicon octicon-trashcan btn-octicon poping up editor-clear" data-content="Clear Editor" data-position="bottom center" data-variation="tiny inverted"></i>
                     </div>
                 </h4>
                 <div class="field">
@@ -53,4 +81,33 @@
 <div th:replace="common/footer::copyright-footer">
 
 </body>
+
+<script>
+    /* init datasource */
+    WeipalEvent.initDataSource(WeipalCommon.eventElement.dataSource);
+
+    /* init catalog */
+    $(WeipalCommon.eventElement.dataSource).change(function () {
+      var param = '?uid=' + WeipalCommon.getUid() + '&sid=' + $(WeipalCommon.eventElement.dataSource).find("option:selected").val();
+        $.get(WeipalApi.getCatalog + param, function (result) {
+          if (result.code === WeipalCode.success) {
+            /* clear catalog item */
+            $('.datasource-catalog > a').remove();
+            $(result.data).each(function (i, d) {
+              $('.datasource-catalog').append('<a class="item" value="' + d + '">' + d + '</a>');
+            });
+            $('.datasource-catalog').find('a').click(function () {
+              /* add active class to current element */
+              $(this).addClass('active');
+              /* remove active class form other element */
+              $('.datasource-catalog').find('a').not(this).removeClass('active');
+            })
+          } else {
+            WeipalCommon.showMessage(WeipalCode.warning, result.data, 'octicon octicon-alert');
+          }
+        });
+    })
+    /* init catalog database */
+</script>
+
 </html>

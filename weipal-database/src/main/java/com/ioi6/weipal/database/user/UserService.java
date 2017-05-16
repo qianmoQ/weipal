@@ -16,7 +16,6 @@ public interface UserService {
      *
      * @return user list
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user")
     List<User> getAllUser();
 
     /**
@@ -25,8 +24,6 @@ public interface UserService {
      * @param id user id
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
-            "WHERE id = #{id}")
     User getById(String id);
 
     /**
@@ -35,8 +32,6 @@ public interface UserService {
      * @param email user email
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
-            "WHERE email = #{email}")
     User getByEmail(String email);
 
     /**
@@ -45,8 +40,6 @@ public interface UserService {
      * @param username user username
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
-            "WHERE username = #{username}")
     User getByUserName(String username);
 
     /**
@@ -56,8 +49,6 @@ public interface UserService {
      * @param password user password
      * @return user
      */
-    @Select(value = "SELECT id, username, password, email, enable, locked, deleted, createTime FROM user " +
-            "WHERE email = #{email} and password = #{password}")
     User getByEmailAndPassword(String email, String password);
 
 }

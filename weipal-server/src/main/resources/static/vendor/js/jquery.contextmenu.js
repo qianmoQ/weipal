@@ -45,7 +45,7 @@ jQuery.fn.contextPopup = function(menuData) {
     }
     settings.items.forEach(function(item) {
       if (item) {
-        var rowCode = '<li><a href="#"><span></span></a></li>';
+        var rowCode = '<li><a><span></span></a></li>';
         // if(item.icon)
         //   rowCode += '<img>';
         // rowCode +=  '<span></span></a></li>';
