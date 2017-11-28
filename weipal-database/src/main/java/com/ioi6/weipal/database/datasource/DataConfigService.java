@@ -1,7 +1,6 @@
 package com.ioi6.weipal.database.datasource;
 
 import com.ioi6.weipal.model.datasource.SourceConfig;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 

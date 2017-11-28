@@ -15,31 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ioi6.weipal.database.datasource;
+package com.ioi6.weipal.model.presto;
 
-import com.ioi6.weipal.database.datasource.mapper.DataSourceMapper;
-import com.ioi6.weipal.model.datasource.DataSource;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
- * Created by shicheng on 2017/5/12.
+ * presto model
+ * Created by shicheng on 2017/6/1.
  */
-@Service(value = "dataSourceService")
-public class DataSourceServiceImpl implements DataSourceService {
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class Presto {
 
-    @Autowired
-    private DataSourceMapper dataSourceMapper;
+    private String coordinatorServer;
+    private String redirectServer;
+    private String catalog;
+    private String schema;
+    private String source;
+    private String query;
 
-    @Override
-    public List<DataSource> getAllSource() {
-        return dataSourceMapper.getAllSource();
-    }
-
-    @Override
-    public List<DataSource> getAllSourceByUserId(String createUserId) {
-        return dataSourceMapper.getAllSourceByUserId(createUserId);
-    }
 }

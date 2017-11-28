@@ -4,19 +4,19 @@
  */
 var WeipalCode = {
 
-  show: 0X01,
-  hide: 0X02,
+    show: 0X01,
+    hide: 0X02,
 
-  success: '0000',
-  error: '1111',
+    success: '0000',
+    error: '1111',
 
-  disabled: 'disabled',
-  reset: 'reset',
+    disabled: 'disabled',
+    reset: 'reset',
 
-  dataIsNotEmpty: 'data is not empty',
+    dataIsNotEmpty: 'data is not empty',
 
-  sqlNotNull: 'select sql is not empty',
+    sqlNotNull: 'select sql is not empty',
 
-  warning: 'warning',
-  prompt: 'prompt',
+    warning: 'warning',
+    prompt: 'prompt',
 }
