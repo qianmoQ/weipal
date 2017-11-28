@@ -25,23 +25,8 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>weipal-common</artifactId>
-    <name>weipal common</name>
-    <description>weipal common module</description>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.ioi6.weipal</groupId>
-            <artifactId>weipal-model</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.facebook.presto</groupId>
-            <artifactId>presto-client</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>weipal-design</artifactId>
+    <name>weipal design</name>
+    <description>weipal design module</description>
 
 </project>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+/*
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements.  See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership.  The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License.  You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:include="common/header::header-all('Index', 'Index')"></head>
+
+<body>
+<div class="full height">
+    <noscript>Please enable JavaScript in your browser!</noscript>
+    <div th:include="common/menu::menu-all"></div>
+    <div class="home">
+        <div class="ui stackable middle very relaxed page grid">
+            <div class="sixteen wide center aligned centered column">
+                <div class="logo">
+                    <img src="/website/favicon.png"/>
+                </div>
+                <div class="hero">
+                    <h1 class="ui icon header title">
+                        Weipal
+                    </h1>
+                    <h2>A painless self-hosted Weipal service</h2>
+                </div>
+            </div>
+        </div>
+        <div class="ui stackable middle very relaxed page grid">
+            <div class="eight wide center column">
+                <h1 class="hero ui icon header">
+                    <i class="octicon octicon-flame"></i> Easy to install
+                </h1>
+                <p class="large">
+                    Simply run the binary for your platform. Or ship Gogs with Docker or Vagrant, or get it packaged.
+                </p>
+            </div>
+            <div class="eight wide center column">
+                <h1 class="hero ui icon header">
+                    <i class="octicon octicon-device-desktop"></i> Cross-platform
+                </h1>
+                <p class="large">
+                    Weipal runs anywhere Java can compile for: Windows, Mac OS X, Linux, ARM, etc. Choose the one you
+                    love!
+                </p>
+            </div>
+        </div>
+        <div class="ui stackable middle very relaxed page grid">
+            <div class="eight wide center column">
+                <h1 class="hero ui icon header">
+                    <i class="octicon octicon-rocket"></i> Lightweight
+                </h1>
+                <p class="large">
+                    Weipal has low minimal requirements and can run on an inexpensive Raspberry Pi. Save your machine
+                    energy!
+                </p>
+            </div>
+            <div class="eight wide center column">
+                <h1 class="hero ui icon header">
+                    <i class="octicon octicon-code"></i> Open Source
+                </h1>
+                <p class="large">
+                    It's all on <a target="_blank" href="/">Git</a>! Join us by contributing to make this project even
+                    better. Don't be shy to be a contributor!
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div th:replace="common/footer::copyright-footer">
+
+</body>
+</html>

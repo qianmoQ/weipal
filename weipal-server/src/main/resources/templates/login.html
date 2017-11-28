@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+/*
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements.  See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership.  The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License.  You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:include="common/header::header-login"></head>
+
+<body>
+<div class="full height">
+    <noscript>Please enable JavaScript in your browser!</noscript>
+
+    <div th:include="common/menu::menu-all"></div>
+
+    <div class="user signin">
+        <div class="ui middle very relaxed page grid">
+            <div class="column">
+                <form class="ui form" th:action="@{/authorization/authenticate}" method="post">
+                    <h3 class="ui top attached header">
+                        Sign In
+                    </h3>
+                    <div class="ui attached segment">
+                        <div class="ui negative message" th:if="${usernamePasswordWrong}">
+                            <p>Username or password is not correct.</p>
+                        </div>
+                        <div class="required inline field ">
+                            <label for="username">UserName</label>
+                            <input id="username" name="username" th:value="${username}" autofocus required>
+                        </div>
+                        <div class="required inline field ">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" value="" required>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <div class="ui checkbox">
+                                <label>Remember Me</label>
+                                <input name="remember" type="checkbox">
+                            </div>
+                        </div>
+
+                        <div class="inline field">
+                            <label></label>
+                            <button class="ui green button" type="submit">Sign In</button>
+                        </div>
+                        <div class="inline field">
+                            <label></label>
+                            <a href="/register">Need an account? Sign up now.</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="common/footer::copyright-footer">
+
+</body>
+</html>
